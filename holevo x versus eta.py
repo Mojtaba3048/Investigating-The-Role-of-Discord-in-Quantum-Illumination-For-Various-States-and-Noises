@@ -3,16 +3,16 @@ from pylab import plot, xlim, ylim, xlabel, ylabel, imshow
 import math
 
 #-----------------------basis--------
-bra0 = np.zeros([1,2])
+bra0 = np.zeros([1,2],dtype = complex)
 bra0[0][0]=1
 
-ket0 = np.zeros([2,1])
+ket0 = np.zeros([2,1],dtype = complex)
 ket0[0][0]= 1
 
-bra1 = np.zeros([1,2])
+bra1 = np.zeros([1,2],dtype = complex)
 bra1[0][1]=1
 
-ket1 = np.zeros([2,1])
+ket1 = np.zeros([2,1],dtype = complex)
 ket1[1][0]=1
 
 ket00 = np.kron(ket0, ket0)
@@ -59,7 +59,7 @@ def entropy( s):
 #-------------------------partial trace function----------------
 
 def ptrace(y):
-    x = np.zeros([2,2])
+    x = np.zeros([2,2],dtype = complex)
     x[0][0] = y[0][0] + y[1][1] 
     x[0][1] = y[0][2] + y[1][3]
     x[1][0] = y[2][0] + y[3][1]
